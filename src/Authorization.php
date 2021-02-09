@@ -61,7 +61,10 @@ class Authorization extends BaseModule
      */
     protected function getManager(): ?Manager
     {
-        return Auth::guard('manager')->user();
+        /** @var Manager $manager */
+        $manager = Auth::guard('manager')->user();
+
+        return $manager;
     }
 
     /**
